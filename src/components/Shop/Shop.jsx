@@ -75,6 +75,12 @@ const Shop = () => {
     deleteShoppingCart();
   };
 
+  const handleItemPerPage = (e) => {
+    const val = parseInt(e.target.value)
+    setItemPerPage(val);
+    console.log(val);
+  };
+
   return (
     <div className="shop-container">
       <div className="products-container">
@@ -99,7 +105,7 @@ const Shop = () => {
         {pages.map((page) => (
           <button key={page}>{page}</button>
         ))}
-        <select>
+        <select value={itemPerPage} onChange={handleItemPerPage} name="" id="">
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>
