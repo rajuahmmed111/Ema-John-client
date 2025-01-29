@@ -4,7 +4,7 @@ const cartProductsLoader = async () => {
   // if cart data is in database, you have to use async await
   const storedCart = getShoppingCart();
   const storedCartIds = Object.keys(storedCart);
-F
+
   const loadedProducts = await fetch("http://localhost:5000/productsIds", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
